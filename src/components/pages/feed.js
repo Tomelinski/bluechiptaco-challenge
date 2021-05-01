@@ -1,16 +1,14 @@
 import React from "react";
-
-import Post from "./Components/Post";
-
+import Post from "../common/post";
 import FEED from "../../data/data.json";
 
-const home = () => {
-  //const { id, title, caption, media, user, isBookmarked, isLiked } = FEED();
+const Feed = () => {
   return (
     <div className="row">
       <div className="offset-md-3 col-md-6 col-sm-12 mt-3">
         {FEED.feed.map((feed) => (
           <Post
+            key={feed.id}
             user={feed.user}
             media={feed.media}
             isBookmarked={feed.isBookmarked}
@@ -24,4 +22,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Feed;

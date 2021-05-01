@@ -1,9 +1,6 @@
 import React from "react";
-
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEllipsisH,
@@ -14,7 +11,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Posts = (props) => {
-  //const { id, title, caption, media, user, isBookmarked, isLiked } = ;
   return (
     <Card className="mt-4">
       <Card.Header>
@@ -25,7 +21,7 @@ const Posts = (props) => {
             roundedCircle
             className="mr-2"
           />
-          {props.user.name}
+          <div className="d-inline font-weight-bold">{props.user.name}</div>
         </div>
         <div className="d-inline float-right">
           <FontAwesomeIcon
@@ -61,7 +57,10 @@ const Posts = (props) => {
           </div>
         </div>
         <Card.Text className="mt-2">
-          {props.user.name} {props.caption} *Post caption here*
+          <span className="d-inline font-weight-bold mr-2">
+            {props.user.name}
+          </span>
+          {props.caption}
         </Card.Text>
       </Card.Body>
     </Card>

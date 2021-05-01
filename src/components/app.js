@@ -5,27 +5,24 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import Navigation from "./navigation/navigation";
+import Feed from "./pages/feed";
 
-import "./App.css";
-import MainNav from "./shared/Navigation/MainNav";
-import PageFeed from "./shared/Pages/PostList";
-
-function App() {
-  let routes;
-  routes = (
+const App = () => {
+  const routes = (
     <Switch>
       <Route path="/" exact>
-        <PageFeed />
+        <Feed />
       </Route>
       <Redirect to="/" />
     </Switch>
   );
   return (
     <div className="App">
-      <MainNav />
+      <Navigation />
       <Router>{routes}</Router>
     </div>
   );
-}
+};
 
 export default App;
