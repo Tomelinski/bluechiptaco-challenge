@@ -3,7 +3,7 @@
 ## How to run
 
 ```
-cd bluechiptaco-app
+cd bluechiptaco-challenge
 npm install
 npm start
 ```
